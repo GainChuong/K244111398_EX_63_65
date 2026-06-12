@@ -1,0 +1,126 @@
+<html>
+    <head>
+    <style type="text/css">
+    @import url(css/maincss.css);
+    </style>
+    <script src="js/dataset.js"></script>
+    <script src="js/mainjs.js"></script>
+    </head>
+    <body >
+
+      <form>
+        <h1>
+            Member Registrasion
+        </h1>
+        <p>
+            <label for="Name">Name(*)</label>
+            <input type="text" name="Name" id="Name" required>
+        </p>
+        <p>
+            <label>Birthday(*)</label>
+            <br>
+            <label for="birth_date">Day:</label>
+            <select name="birth_date" id="birth_date"></select>
+            <label for="birth_month">Month:</label>
+            <select name="birth_month" id="birth_month"></select>
+            <label for="birth_year">Year:</label>
+            <select name="birth_year" id="birth_year"></select>
+        </p>
+        <p>
+            <label>Gender(*)</label>
+            <br>
+            <input type="radio" name="Gender" id="gender_man" value="Man" checked />
+            <label for="gender_man">Man</label>
+            <input type="radio" name="Gender" id="gender_woman" value="Woman" />
+            <label for="gender_woman">Woman</label>
+        </p>
+        <p>
+            <label for="Email">Email(*)</label>
+            <input type="email" id="Email" name="Email">
+        </p>
+        <p>
+            <label>Your favorite:</label>
+            <br>
+            <input type="checkbox" name="shopping" id="shopping">
+            <label for="shopping">Shopping</label>
+            <br>
+            <input type="checkbox" name="tourism" id="tourism">
+            <label for="tourism">Tourism</label>
+            <br>
+            <input type="checkbox" name="chat" id="chat">
+            <label for="chat">Chat</label>
+            <br>
+            <input type="checkbox" name="read" id="read">
+            <label for="read">Read a book</label>
+            <br>
+            <input type="checkbox" name="music" id="music">
+            <label for="music">Listening to music</label>
+        </p>
+        <p>
+            <label>Your favorite color:</label>
+            <br>
+            <input type="radio" name="color" id="color_blue" value="blue" checked/>
+            <label for="color_blue"><span style="background-color: blue; padding: 2px 5px; color: white;">Blue</span></label>
+            <br>
+            <input type="radio" name="color" id="color_red" value="red"/>
+            <label for="color_red"><span style="background-color: red; padding: 2px 5px; color: white;">Red</span></label>
+            <br>
+            <input type="radio" name="color" id="color_yellow" value="yellow"/>
+            <label for="color_yellow"><span style="background-color: yellow; padding: 2px 5px;">Yellow</span></label>
+            <br>
+            <input type="radio" name="color" id="color_green" value="green"/>
+            <label for="color_green"><span style="background-color: green; padding: 2px 5px; color: white;">Green</span></label>
+            <br>
+            <input type="radio" name="color" id="color_violet" value="violet"/>
+            <label for="color_violet"><span style="background-color: violet; padding: 2px 5px; color: white;">Violet</span></label>
+        </p>
+        <p>
+            <button type="button" onclick="create_new_emp()">
+                Sign up
+            </button>
+            <button type="button" onclick="reset_form()">
+                Reset
+            </button>
+        </p>
+      </form>
+       <table id="tableemp" border="1">
+        <thead style="background-color: blue;">
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Gender</th>
+                <th>Birthday</th>
+                <th>Hobbies</th>
+                <th>Colors</th>
+            </tr>
+        </thead>
+        <tbody id="bodyemp">
+
+        </tbody>
+      </table>
+      <script>
+         load_data(emps, document.getElementById("bodyemp"))
+      </script>
+      <script>
+        function create_birthday_control()
+        {
+            birth_date = document.getElementById("birth_date")
+            for (var i=1; i<=31; i++)
+            {
+                birth_date.innerHTML += "<option value='" + i + "'>" + i + "</option>"
+            }
+            birth_month = document.getElementById("birth_month")
+            for (var i=1; i<=12; i++)
+            {
+                birth_month.innerHTML += "<option value='" + i + "'>" + i + "</option>"
+            }
+            birth_year = document.getElementById("birth_year")
+            for (var i=1965; i<=2017; i++)
+            {
+                birth_year.innerHTML += "<option value='" + i + "'>" + i + "</option>"
+            }
+        }
+        create_birthday_control()
+    </script>
+    </body>
+</html>
