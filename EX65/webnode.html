@@ -1,0 +1,59 @@
+<html>
+    <head>
+    <style type="text/css">
+    @import url(css/maincss.css);
+    </style>
+    <script src="js/data.js"></script>
+    <script src="js/mainjss.js"></script>
+    </head>
+    <body>      
+      <div class="box">
+        <table>
+          <tr>
+            <td>
+              <button type="button" onclick="add_node()">Add Node</button>
+            </td>
+            <td>
+              Content
+              <input type="text" id="content">
+            </td>
+            <td>
+              Position
+              <input type="number" id="position" min="1">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <button type="button" onclick="delete_node()">Remove Node</button>
+            </td>
+            <td></td>
+            <td>
+              Position
+              <input type="number" id="positionDel" min="1">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <button type="button" onclick="modify_node()">Modify Node</button>
+            </td>
+            <td>
+              New Content
+              <input type="text" id="newContent">
+            </td>
+            <td>
+              Position
+              <input type="number" id="modifyPosition" min="1">
+            </td>
+          </tr>
+        </table>
+        
+        <h3>Web Node</h3>
+        <ul id="nodeList">
+        </ul>
+      </div>
+      
+      <script>
+         load_data(nodes, document.getElementById("nodeList"))
+      </script>
+    </body>
+</html>
