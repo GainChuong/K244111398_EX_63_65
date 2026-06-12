@@ -38,7 +38,6 @@ function create_new_emp(){
     Birth_year=document.getElementById("birth_year").value
     Birthday=Birth_day+"/"+Birth_month+"/"+Birth_year
     
-    // Get hobbies from checkboxes
     Hobbies=[]
     if(document.getElementById("shopping").checked) Hobbies.push("Shopping")
     if(document.getElementById("tourism").checked) Hobbies.push("Tourism")
